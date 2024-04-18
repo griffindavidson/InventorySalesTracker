@@ -34,8 +34,8 @@ Import the provided SQL file to set up the database schema and initial data. Exe
 
 ```bash
 mysql -u your_mysql_username -p your_database_name < path/to/inventorysalestracker.sql
-Replace your_mysql_username and your_database_name with your MySQL username and the desired database name, respectively.
 ```
+Replace your_mysql_username and your_database_name with your MySQL username and the desired database name, respectively.
 
 ### 4. Configure Environment Variables
 
