@@ -54,8 +54,9 @@ JWT_SECRET=your_jwt_secret
 Generate a new JWT secret key using Node.js:
 ```bash
 node -e "console.log(require('crypto').randomBytes(64).toString('hex'));"
-Copy the output and use it as the value for JWT_SECRET in your .env file.
 ```
+
+Copy the output and use it as the value for JWT_SECRET in your .env file.
 
 ### 5. Start the Application
 With the database set up and the environment configured, start the application server by running:
