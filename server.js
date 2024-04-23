@@ -19,6 +19,7 @@ const salesRoutes = require('./routes/sales');
 const saleItemsRoutes = require('./routes/sale_items');
 const suppliersRoutes = require('./routes/suppliers');
 const usersRoutes = require('./routes/users');
+const authRoutes = require('./routes/auth');
 
 // Test database connection by querying some data
 app.get('/testdb', (req, res) => {
@@ -27,6 +28,8 @@ app.get('/testdb', (req, res) => {
         res.send(`Database connected, test query returned: ${results[0].solution}`);
     });
 });
+
+app.use(express.static('public'));
 
 // Basic route to confirm the server is working
 app.get('/', (req, res) => {
@@ -42,6 +45,7 @@ app.use('/api/sales', salesRoutes);
 app.use('/api/sale-items', saleItemsRoutes);
 app.use('/api/suppliers', suppliersRoutes);
 app.use('/api/users', usersRoutes);
+app.use('/api/auth', authRoutes);
 
 // Start the server
 const PORT = process.env.PORT || 3000;
