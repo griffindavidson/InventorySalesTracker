@@ -1,0 +1,38 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.main-holder {
+    width: 70%;
+    height: 50%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    padding-bottom: 50%;
+}
+
+#login-form {
+    align-self: flex-start;
+    display: grid;
+    justify-items: center;
+    justify-content: center; 
+}
+
+#signup-form {
+    align-self: flex-start;
+    display: grid;
+    justify-items: center;
+    justify-content: center; 
+}
+
+.submit-button {
+    cursor: grab;
+}
