@@ -306,3 +306,14 @@ button:hover {
     border-bottom: 1px solid #03254c; /* Visual separation */
     margin: 0; /* Removes any margin to avoid unwanted gaps */
 }
+
+.dashboard-footer {
+    position: fixed;
+    left: 270px; /* Start the footer at the right edge of the sidebar */
+    bottom: 0;
+    right: 0; /* Extend to the right edge of the viewport */
+    text-align: center;
+    padding: 10px;
+    background-color: #0b3269;
+    color: white;
+}
