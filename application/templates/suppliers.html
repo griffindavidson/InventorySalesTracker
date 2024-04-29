@@ -9,28 +9,26 @@
         <tr>
             <th>ID</th>
             <th>Name</th>
-            <th>Contact Name</th>
-            <th>Phone</th>
             <th>Email</th>
-            <th>Address</th>
+            <th>Payment Conditions</th>
         </tr>
     </thead>
     <tbody>
         <!-- Sample Supplier Row -->
+        {% for supplier in supplierData %}
         <tr>
-            <td>1</td>
-            <td>Global Tech</td>
-            <td>Jane Doe</td>
-            <td>123-456-7890</td>
-            <td>jane.doe@example.com</td>
-            <td>1234 Some St, Tech City</td>
+            <td>{{ supplier[0] }}</td> <!-- Supplier ID -->
+            <td>{{ supplier[1] }}</td> <!-- Supplier Name-->
+            <td>{{ supplier[2] }}</td> <!-- Supplier email -->
+            <td>{{ supplier[3] }}</td> <!-- Supplier Payment conditions -->
         </tr>
+        {% endfor %}
         <!-- Additional supplier rows can be dynamically generated from a database -->
     </tbody>
 </table>
 
 <!-- Inserting an image in the middle of the page -->
 <div class="supplier-image-container">
-    <img src="{{ url_for('static', filename='images/suppliers_image.png') }}" alt="Supplier Image" class="supplier-image">
+    <img src="{{ url_for('static', filename='images/products_image.png') }}" alt="Supplier Image" class="supplier-image">
 </div>
 {% endblock %}

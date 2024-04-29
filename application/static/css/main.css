@@ -224,10 +224,26 @@ button {
     padding: 6px 12px;
     border: none;
     background-color: #4CAF50;
+    font: inherit;
+    font-size: small; 
+    color: white !important;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+.delete-button {
+    padding: 6px 12px;
+    border: none;
+    background-color: #E22;
     color: white;
     cursor: pointer;
     border-radius: 4px;
     margin-right: 5px;
+}
+
+.delete-button:hover {
+    background-color: #D11;
 }
 
 button:hover {

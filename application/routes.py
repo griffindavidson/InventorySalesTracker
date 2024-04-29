@@ -37,19 +37,24 @@ def categories():
 
 @app.route("/suppliers")
 def suppliers():
-    return render_template("suppliers.html")
+
+    apiSupplierData = list_suppliers()
+
+    return render_template("suppliers.html", supplierData=apiSupplierData)
 
 @app.route("/inventories")
 def inventories():
-    return render_template("inventories.html")
 
-@app.route("/sales")
-def sales():
-    return render_template("sales.html")
+    apiInventoryData = list_inventories()
+
+    return render_template("inventories.html", inventoryData=apiInventoryData)
 
 @app.route("/sales_items")
 def sales_items():
-    return render_template("sales_items.html")
+
+    apiTransactionData = list_transactions()
+
+    return render_template("sales_items.html", transactionData=apiTransactionData)
 
 @app.route("/customers")
 def customers():
@@ -62,7 +67,7 @@ def logout():
 #Configure MySQL
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'password'
+app.config['MYSQL_PASSWORD'] = 'davidson1'
 app.config['MYSQL_DB'] = 'buisness'
 
 #create instance of database
@@ -133,6 +138,38 @@ def list_categories():
     categories = cur.fetchall()
     cur.close()
     return categories
+
+def list_suppliers():
+    cur = mysql.connection.cursor()
+    cur.execute('SELECT * FROM suppliers')
+    suppliers = cur.fetchall()
+    cur.close()
+    return suppliers
+
+def list_inventories():
+    cur = mysql.connection.cursor()
+    
+    query = 'SELECT p.id, p.name, i.quantity, i.location FROM products p INNER JOIN inventories i on p.id = i.productID'
+
+    cur.execute(query)
+    inventories = cur.fetchall()
+    cur.close()
+    return inventories
+
+def list_transactions():
+    cur = mysql.connection.cursor()
+
+    query = """
+            SELECT t.id, t.productID, p.name, t.quantityPurchased, concat(c.firstName, ' ', c.lastName), p.price, t.price 
+            FROM transactions t 
+            INNER JOIN products p on (t.productID = p.id) 
+            INNER JOIN customers c on (t.customerID = c.id)
+            """
+
+    cur.execute(query)
+    transactions = cur.fetchall()
+    cur.close()
+    return transactions
 
 
 

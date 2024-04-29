@@ -13,24 +13,24 @@
             <th>Product</th>
             <th>Quantity</th>
             <th>Location</th>
-            <th>Status</th>
         </tr>
     </thead>
     <tbody>
         <!-- Sample Inventory Row -->
+        {% for inventory in inventoryData %}
         <tr>
-            <td>1</td>
-            <td>High-End Laptop</td>
-            <td>25</td>
-            <td>Warehouse A</td>
-            <td>In Stock</td>
+            <td>{{ inventory[0] }}</td>
+            <td>{{ inventory[1] }}</td>
+            <td>{{ inventory[2] }}</td>
+            <td>{{ inventory[3] }}</td>
         </tr>
+        {% endfor %}
         <!-- Additional inventory rows can be dynamically generated from a database -->
     </tbody>
 </table>
 
 <!-- Inserting an image in the middle of the page -->
 <div class="inventory-image-container">
-    <img src="{{ url_for('static', filename='images/inventory_image.png') }}" alt="Inventory Image" class="inventory-image">
+    <img src="{{ url_for('static', filename='images/products_image.png') }}" alt="Inventory Image" class="inventory-image">
 </div>
 {% endblock %}

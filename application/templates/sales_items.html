@@ -3,34 +3,38 @@
 {% block title %}Sales Items - Inventory Management Dashboard{% endblock %}
 
 {% block content %}
-<h2>Sales Items Overview</h2>
+<h2>Transactions Overview</h2>
 <table class="sales-items-table">
     <thead>
         <tr>
-            <th>Sale ID</th>
+            <th>Transaction ID</th>
             <th>Product ID</th>
             <th>Product Name</th>
             <th>Quantity Sold</th>
-            <th>Sale Price</th>
-            <th>Total</th>
+            <th>Buyer</th>
+            <th>Item Price</th>
+            <th>Total Price</th>
         </tr>
     </thead>
     <tbody>
         <!-- Sample Sale Item Row -->
+        {% for transaction in transactionData %}
         <tr>
-            <td>101</td>
-            <td>001</td>
-            <td>High-End Laptop</td>
-            <td>3</td>
-            <td>$1500</td>
-            <td>$4500</td>
+            <td>{{ transaction[0] }}</td>
+            <td>{{ transaction[1] }}</td>
+            <td>{{ transaction[2] }}</td>
+            <td>{{ transaction[3] }}</td>
+            <td>{{ transaction[4] }}</td>
+            <td>${{ transaction[5] }}</td>
+            <td>${{ transaction[6] }}</td>
         </tr>
+        {% endfor %}
         <!-- Additional sale items rows can be dynamically generated from a database -->
     </tbody>
 </table>
 
 <!-- Inserting an image in the middle of the page -->
 <div class="sales-items-image-container">
-    <img src="{{ url_for('static', filename='images/sales_items_image.png') }}" alt="Sales Items Image" class="sales-items-image">
+    <img src="{{ url_for('static', filename='images/products_image.png') }}" alt="Sales Items Image" class="sales-items-image">
 </div>
 {% endblock %}

@@ -1,5 +1,8 @@
+
 CREATE DATABASE IF NOT EXISTS buisness;
 USE buisness;
+
+/*
 
 CREATE TABLE IF NOT EXISTS `categories` (
 	`id` int NOT NULL,
@@ -77,4 +80,6 @@ CREATE TABLE IF NOT EXISTS `transactions` (
 );
 INSERT INTO transactions VALUES (42, 500, 2, 19.98, "2024-04-29", 9);
 
-SELECT categories.id, categories.title, COUNT(products.id) FROM categories LEFT JOIN products ON categories.id = products.categoryID GROUP BY categories.id, categories.title;
+*/
+
+INSERT INTO inventories VALUES (499, 72, "Stockton");
