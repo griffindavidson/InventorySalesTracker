@@ -2,8 +2,6 @@
 CREATE DATABASE IF NOT EXISTS buisness;
 USE buisness;
 
-/*
-
 CREATE TABLE IF NOT EXISTS `categories` (
 	`id` int NOT NULL,
     `title` varchar(255) default null,
@@ -79,7 +77,3 @@ CREATE TABLE IF NOT EXISTS `transactions` (
     foreign key (`customerID`) REFERENCES `customers` (`id`)
 );
 INSERT INTO transactions VALUES (42, 500, 2, 19.98, "2024-04-29", 9);
-
-*/
-
-INSERT INTO inventories VALUES (499, 72, "Stockton");

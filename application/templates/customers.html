@@ -10,25 +10,23 @@
             <th>ID</th>
             <th>Name</th>
             <th>Email</th>
-            <th>Phone</th>
-            <th>Status</th>
         </tr>
     </thead>
     <tbody>
         <!-- Sample Customer Row -->
+        {% for customer in customerData %}
         <tr>
-            <td>1</td>
-            <td>John Doe</td>
-            <td>john.doe@example.com</td>
-            <td>123-456-7890</td>
-            <td>Active</td>
+            <td>{{ customer[0] }}</td>
+            <td>{{ customer[1] }}</td>
+            <td>{{ customer[2] }}</td>
         </tr>
+        {% endfor %}
         <!-- Additional customer rows can be dynamically generated from a database -->
     </tbody>
 </table>
 
 <!-- Inserting an image in the middle of the page -->
 <div class="customer-image-container">
-    <img src="{{ url_for('static', filename='images/customers_image.png') }}" alt="Customer Image" class="customer-image">
+    <img src="{{ url_for('static', filename='images/products_image.png') }}" alt="Customer Image" class="customer-image">
 </div>
 {% endblock %}

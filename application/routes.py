@@ -58,7 +58,10 @@ def sales_items():
 
 @app.route("/customers")
 def customers():
-    return render_template("customers.html")
+
+    apiCustomerData = list_customers()
+
+    return render_template("customers.html", customerData=apiCustomerData)
 
 @app.route("/logout")
 def logout():
@@ -170,6 +173,13 @@ def list_transactions():
     transactions = cur.fetchall()
     cur.close()
     return transactions
+
+def list_customers():
+    cur = mysql.connection.cursor()
+    cur.execute('SELECT id, concat(firstname, " ", lastName), email FROM customers')
+    customers = cur.fetchall()
+    cur.close()
+    return customers
 
 
 
