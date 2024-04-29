@@ -1,0 +1,36 @@
+
+
+{% extends 'base.html' %}
+
+{% block title %}Inventories - Inventory Management Dashboard{% endblock %}
+
+{% block content %}
+<h2>Inventory Overview</h2>
+<table class="inventory-table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Location</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Sample Inventory Row -->
+        <tr>
+            <td>1</td>
+            <td>High-End Laptop</td>
+            <td>25</td>
+            <td>Warehouse A</td>
+            <td>In Stock</td>
+        </tr>
+        <!-- Additional inventory rows can be dynamically generated from a database -->
+    </tbody>
+</table>
+
+<!-- Inserting an image in the middle of the page -->
+<div class="inventory-image-container">
+    <img src="{{ url_for('static', filename='images/inventory_image.png') }}" alt="Inventory Image" class="inventory-image">
+</div>
+{% endblock %}

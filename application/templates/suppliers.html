@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Suppliers - Inventory Management Dashboard{% endblock %}
+
+{% block content %}
+<h2>Suppliers Overview</h2>
+<table class="supplier-table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Contact Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Sample Supplier Row -->
+        <tr>
+            <td>1</td>
+            <td>Global Tech</td>
+            <td>Jane Doe</td>
+            <td>123-456-7890</td>
+            <td>jane.doe@example.com</td>
+            <td>1234 Some St, Tech City</td>
+        </tr>
+        <!-- Additional supplier rows can be dynamically generated from a database -->
+    </tbody>
+</table>
+
+<!-- Inserting an image in the middle of the page -->
+<div class="supplier-image-container">
+    <img src="{{ url_for('static', filename='images/suppliers_image.png') }}" alt="Supplier Image" class="supplier-image">
+</div>
+{% endblock %}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management Dashboard</title>
+    <link rel="stylesheet" href="static/css/main.css">
+</head>
+<body>
+    <header class="dashboard-header">
+        <h1>Inventory Management System</h1>
+        <div class="user-info">
+            <a href="/logout" class="logout">Logout</a>
+        </div>
+    </header>
+    
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="image-container">
+                <img src="static/images/menu.png" alt="Menu Image" class="menu-image">
+            </div>
+
+            <div class="image-container">
+                <img src="static/images/front.png" alt="Menu Image" class="menu-image">
+            </div>
+           
+            {% include 'includes/nav.html' %}
+
+        </aside>
+        
+        <section class="main-content">
+            <div class="stats-cards">
+                <!-- Top Row Cards -->
+                <div class="stats-card product">
+                    <h3>Total Products</h3>
+                    <p id="total-products-quantity">[-]</p>
+                </div>
+                <div class="stats-card category">
+                    <h3>Total Categories</h3>
+                    <p id="total-categories-quantity">[-]</p>
+                </div>
+                <div class="stats-card supplier">
+                    <h3>Total Suppliers</h3>
+                    <p id="total-suppliers-quantity">[-]</p>
+                </div>
+                <!-- Bottom Row Cards (side by side) -->
+                <div class="stats-card inventory">
+                    <h3>Total Inventories</h3>
+                    <p id="total-inventories-quantity">[-]</p>
+                </div>
+                <div class="stats-card sales">
+                    <h3>Total Sales</h3>
+                    <p id="total-transactions-quantity">[-]</p>
+                </div>
+                <div class="stats-card customer">
+                    <h3>Customers</h3>
+                    <p id="total-customers-quantity">[-]</p>
+                </div>
+
+            </div>
+            <div class="image-container" style="text-align: center;">
+                <img src="static/images/bar_pie.png" alt="Front Image">
+                <img src="static/images/pie.png">
+                
+            </div>
+        </section>
+    </div>
+
+    {% include 'includes/footer.html' %}
+    <script type="text/javascript" src="..\static\js\api-index.js"></script>
+</body>
+</html>

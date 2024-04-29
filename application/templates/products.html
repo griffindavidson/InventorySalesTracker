@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Products - Inventory Management Dashboard{% endblock %}
+
+{% block content %}
+<h2>Products Overview</h2>
+<table class="product-table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for product in productsData %}
+        <tr>
+            <td>{{ product[0] }}</td>
+            <td>{{ product[1] }}</td>
+            <td>{{ product[2] }}</td>
+            <td>${{ product[3] }}</td>
+            <td>
+                <button>Edit</button>
+                <button>Delete</button>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<!-- Inserting an image in the middle of the page -->
+<div class="product-image-container">
+    <img src="{{ url_for('static', filename='images/products_image.png') }}" alt="Product Image" class="product-image">
+</div>
+{% endblock %}

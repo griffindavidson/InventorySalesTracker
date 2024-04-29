@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Sales Items - Inventory Management Dashboard{% endblock %}
+
+{% block content %}
+<h2>Sales Items Overview</h2>
+<table class="sales-items-table">
+    <thead>
+        <tr>
+            <th>Sale ID</th>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Quantity Sold</th>
+            <th>Sale Price</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Sample Sale Item Row -->
+        <tr>
+            <td>101</td>
+            <td>001</td>
+            <td>High-End Laptop</td>
+            <td>3</td>
+            <td>$1500</td>
+            <td>$4500</td>
+        </tr>
+        <!-- Additional sale items rows can be dynamically generated from a database -->
+    </tbody>
+</table>
+
+<!-- Inserting an image in the middle of the page -->
+<div class="sales-items-image-container">
+    <img src="{{ url_for('static', filename='images/sales_items_image.png') }}" alt="Sales Items Image" class="sales-items-image">
+</div>
+{% endblock %}
