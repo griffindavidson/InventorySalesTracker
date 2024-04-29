@@ -191,7 +191,7 @@ body, h1, h3, p {
 }
 
 .dashboard-footer {
-    position: relative;
+    position: fixed;
 }
 
 
@@ -234,3 +234,75 @@ button:hover {
     background-color: #45a049; /* Slightly darker green on hover */
 }
 
+.sidebar {
+    position: fixed; /* Fixes the sidebar to the viewport */
+    width: 250px;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh; 
+    top: 0; 
+    left: 0; 
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: calc(100vh - 100px);
+    margin-left: 250px; /* Adds a left margin to the dashboard container to prevent overlap with the sidebar */
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    padding-bottom: 0;
+    min-height: calc(100vh - 130px);
+}
+
+.sidebar .image-container img {
+    width: 100%;
+    padding: 0px;
+    max-height: 100px;
+    margin-bottom: 0; /* Removes bottom margin from images */
+    margin-top: 0; /* Removes top margin from images */
+}
+
+.sidebar .nav-link {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: white;
+    background-color: #0b3269;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s;
+    border-bottom: 1px solid #03254c; 
+    margin: 0; /* Removes any default margin */
+}
+
+.sidebar .image-container {
+    height: 160px; /* Set a fixed height for the image container */
+    overflow: hidden; /* Hides any overflow */
+    padding: 0; /* Removes padding inside the image container */
+    margin: 0; /* Ensures no margin affects the layout */
+}
+
+.sidebar .image-container img {
+    width: 100%;
+    display: block; /* Ensures images are block level to take up full width */
+}
+
+.sidebar .nav-link {
+    padding: 10px 15px;
+    height: 400;
+    text-decoration: none;
+    color: white;
+    background-color: #0b3269;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s;
+    border-bottom: 1px solid #03254c; /* Visual separation */
+    margin: 0; /* Removes any margin to avoid unwanted gaps */
+}
