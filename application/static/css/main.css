@@ -128,3 +128,109 @@ body, h1, h3, p {
     width: 50%;
     height: auto;
 }
+
+.dashboard-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-color: #0b3269;
+    color: white;
+}
+
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.product-table th, .product-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center; /* Center aligns all text in the table */
+}
+
+.product-table thead tr {
+    background-color: #f4f4f4; /* Light grey background for the header row */
+}
+
+.product-table button {
+    width: 80px; /* Sets a fixed width for buttons to ensure they are equal */
+    padding: 8px 0; /* Provides padding for a slightly larger button */
+    border: none; /* Removes border from buttons */
+    color: rgb(16, 62, 188); 
+    cursor: pointer; /* Changes cursor to pointer when hovering over buttons */
+    margin-right: 5px; /* Adds a right margin to buttons */
+}
+
+.product-table button.edit {
+    background-color: #4CAF50; /* Green background for the edit button */
+}
+
+.product-table button.delete {
+    background-color: #f44336; /* Red background for the delete button */
+}
+
+.product-image-container {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.product-image {
+    max-height: 100%;
+    width: auto;
+}
+
+.main-content {
+    padding-bottom: 0;
+    min-height: calc(100vh - 130px);
+}
+
+.dashboard-footer {
+    position: relative;
+}
+
+
+/* General styles for all tables in various HTML files */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px; /* Adds bottom space for separation */
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+thead tr {
+    background-color: #f4f4f4; /* Light grey background for header */
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f9f9f9; /* Lighter grey for odd rows for better readability */
+}
+
+tbody tr:hover {
+    background-color: #e6e6e6; /* Highlight on hover for better interaction feedback */
+}
+
+button {
+    padding: 6px 12px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+button:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+}
+
